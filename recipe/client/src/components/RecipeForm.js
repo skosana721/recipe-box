@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function RecipeForm() {
   const [formData, setFormData] = useState({
     recipe: "",
-    ingredients: [],
+    ingredients: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,12 +18,13 @@ function RecipeForm() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="recipe"
           onChange={handleChange}
           placeholder="Enter recipe "
           value={formData.recipe}
         />
         <textarea
-          name=""
+          name="ingredients"
           id=""
           onChange={handleChange}
           cols="30"
