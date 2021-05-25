@@ -9,13 +9,18 @@ function RecipeForm() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           onChange={handleChange}
           placeholder="Enter recipe "
+          value={formData.recipe}
         />
         <textarea
           name=""
@@ -24,6 +29,7 @@ function RecipeForm() {
           cols="30"
           rows="7"
           placeholder="Enter ingredients"
+          value={formData.ingredients}
         ></textarea>
         <button type="submit">Add</button>
       </form>
