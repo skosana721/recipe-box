@@ -11,11 +11,16 @@ function RecipeForm() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    if (formData.recipe && formData.ingredients) {
+      setFormData({
+        recipe: "",
+        ingredients: "",
+      });
+    }
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="recipe-form">
         <input
           type="text"
           name="recipe"
