@@ -21,5 +21,14 @@ const recipeRoutes = (app) => {
       res.status(400).send(error);
     }
   });
+  app.delete("/api/recipe/:id", async (req, res) => {
+    try {
+      const recipe = await Recipe.findById({ _id: req.params.id });
+      const deletedRecipe = await recipe.deleteOne();
+      res.status(200).send(deletedRecipe);
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  });
 };
 module.exports = { recipeRoutes };
