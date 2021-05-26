@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { addRecipe } from "../redux/actions/recipe";
 
 function RecipeForm() {
   const [formData, setFormData] = useState({
     recipe: "",
     ingredients: "",
   });
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -13,6 +15,7 @@ function RecipeForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.recipe && formData.ingredients) {
+      dispatch(addRecipe(formData));
       setFormData({
         recipe: "",
         ingredients: "",
