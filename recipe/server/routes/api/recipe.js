@@ -1,8 +1,13 @@
 const Recipe = require("../../model/recipe");
 
 const recipeRoutes = (app) => {
-  app.get("/api/recipe", (req, res) => {
-    res.send("hello");
+  app.get("/api/recipe", async (req, res) => {
+    try {
+      const results = await Recipe.find();
+      res.status(200).send(results);
+    } catch (error) {
+      res.status(404).send(error);
+    }
   });
   app.post("/api/recipe", async (req, res) => {
     const { recipe, ingredients } = req.body;
