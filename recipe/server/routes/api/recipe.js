@@ -1,5 +1,5 @@
 const recipeRoutes = (app) => {
-  app.get((req, res) => {
+  app.get("/recipe", (req, res) => {
     res.send("hello");
   });
 };
