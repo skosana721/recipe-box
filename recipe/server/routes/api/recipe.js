@@ -30,5 +30,18 @@ const recipeRoutes = (app) => {
       res.status(400).send(error);
     }
   });
+  app.put("/api/recipe/:id", async (req, res) => {
+    try {
+      const updatedRecipe = await Recipe.updateOne(
+        { _id: req.params.id },
+        {
+          ingredients: req.body.ingredients,
+        }
+      );
+      res.status(201).send(updatedRecipe);
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  });
 };
 module.exports = { recipeRoutes };
