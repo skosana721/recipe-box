@@ -1,4 +1,4 @@
-import { ADD_RECIPE, GET_RECIPES } from "../actionTypes/recipe";
+import { ADD_RECIPE, DELETE_RECIPE, GET_RECIPES } from "../actionTypes/recipe";
 
 const initialState = {
   recipeList: [],
@@ -13,6 +13,10 @@ export const recipeReducer = (state = initialState, action) => {
       };
     case ADD_RECIPE:
       return { ...state, recipeList: [...state.recipeList, action.payload] };
+    case DELETE_RECIPE:
+      return {
+        ...state,
+      };
     default:
       return state;
   }
