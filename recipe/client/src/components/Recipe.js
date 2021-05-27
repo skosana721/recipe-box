@@ -1,10 +1,28 @@
-import React from "react";
-import { ListGroup, ListGroupItem } from "reactstrap";
+import React, { useState } from "react";
+import {
+  ListGroup,
+  ListGroupItem,
+  Collapse,
+  CardBody,
+  Button,
+  Card,
+} from "reactstrap";
 function Recipe({ recipe, _id, ingredients }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <div>
       <ListGroup>
-        <ListGroupItem>{recipe}</ListGroupItem>
+        <ListGroupItem>
+          <span onClick={toggle}>{recipe}</span>
+          <Button>Delete</Button>
+        </ListGroupItem>
+        <Collapse isOpen={isOpen}>
+          <Card>
+            <CardBody>{ingredients}</CardBody>
+          </Card>
+        </Collapse>
       </ListGroup>
     </div>
   );
