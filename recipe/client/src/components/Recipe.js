@@ -1,7 +1,13 @@
 import React from "react";
-
-function Recipe() {
-  return <div></div>;
+import { ListGroup, ListGroupItem } from "reactstrap";
+function Recipe({ recipe, _id, ingredients }) {
+  return (
+    <div>
+      <ListGroup>
+        <ListGroupItem>{recipe}</ListGroupItem>
+      </ListGroup>
+    </div>
+  );
 }
 
 export default Recipe;
