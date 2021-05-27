@@ -27,6 +27,7 @@ export const deleteRecipe = (id) => {
     axios.delete(`http://localhost:4000/api/recipe/${id}`).then((res) => {
       dispatch({
         type: DELETE_RECIPE,
+        payload: res.data,
       });
     });
   };
