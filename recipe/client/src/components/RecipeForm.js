@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addRecipe } from "../redux/actions/recipe";
+import { addRecipe, getRecipe } from "../redux/actions/recipe";
 
 function RecipeForm() {
   const [formData, setFormData] = useState({
@@ -22,6 +22,7 @@ function RecipeForm() {
       });
     }
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="recipe-form">
