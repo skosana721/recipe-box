@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addRecipe, getRecipe } from "../redux/actions/recipe";
+import { addRecipe } from "../redux/actions/recipe";
 
 function RecipeForm() {
   const [formData, setFormData] = useState({
@@ -8,9 +8,7 @@ function RecipeForm() {
     ingredients: "",
   });
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getRecipe());
-  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
