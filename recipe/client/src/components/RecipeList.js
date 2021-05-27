@@ -1,9 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getRecipe } from "../redux/actions/recipe";
+
 import Recipe from "./Recipe";
 
 function RecipeList() {
   const recipeList = useSelector((state) => state.recipeList);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getRecipe());
+  }, [recipeList, dispatch]);
   return (
     <div>
       {recipeList.map((recipe) => {
