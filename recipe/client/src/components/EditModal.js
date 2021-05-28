@@ -14,7 +14,9 @@ function EditModal() {
         <ModalBody>Hello World</ModalBody>
         <ModalFooter>
           <Button color="primary">Do Something</Button>{" "}
-          <Button color="secondary">Cancel</Button>
+          <Button color="secondary" onClick={toggle}>
+            Cancel
+          </Button>
         </ModalFooter>
       </Modal>
     </div>
