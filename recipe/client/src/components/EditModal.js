@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-
+import { useDispatch } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 function EditModal({ ingredients }) {
   const [modal, setModal] = useState(false);
   const [newIngredients, setNewIngredients] = useState(ingredients);
+  const dispatch = useDispatch();
   const toggle = () => setModal(!modal);
   const handleSubmit = (e) => {
     e.preventDefault();
