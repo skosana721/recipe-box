@@ -26,8 +26,15 @@ export const recipeReducer = (state = initialState, action) => {
         ),
       };
     case EDIT_RECIPE:
+      const { id, newIngredients } = action.payload;
       return {
         ...state,
+        recipeList: state.recipeList.map((recipe) => {
+          if (recipe._id === id) {
+            return { ...recipe, ingredients: newIngredients };
+          }
+          return recipe;
+        }),
       };
     default:
       return state;
