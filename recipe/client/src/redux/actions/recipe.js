@@ -1,5 +1,10 @@
 import axios from "axios";
-import { ADD_RECIPE, DELETE_RECIPE, GET_RECIPES } from "../actionTypes/recipe";
+import {
+  ADD_RECIPE,
+  DELETE_RECIPE,
+  EDIT_RECIPE,
+  GET_RECIPES,
+} from "../actionTypes/recipe";
 
 export const getRecipe = () => {
   return (dispatch) => {
@@ -30,5 +35,17 @@ export const deleteRecipe = (id) => {
         payload: res.data,
       });
     });
+  };
+};
+export const editRecipe = (obj) => {
+  const { _id, ingredients } = obj;
+  return (dispatch) => {
+    axios
+      .put(`http://localhost:4000/api/recipe/${_id}`, { ingredients })
+      .then((res) => {
+        dispatch({
+          type: EDIT_RECIPE,
+        });
+      });
   };
 };
