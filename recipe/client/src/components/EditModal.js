@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-function EditModal() {
+function EditModal({ ingredients }) {
   const [modal, setModal] = useState(false);
+  const [newIngredients, setNewIngredients] = useState(ingredients);
   const toggle = () => setModal(!modal);
   return (
     <div>
