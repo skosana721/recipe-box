@@ -32,7 +32,7 @@ export const deleteRecipe = (id) => {
     axios.delete(`http://localhost:4000/api/recipe/${id}`).then((res) => {
       dispatch({
         type: DELETE_RECIPE,
-        payload: res.data,
+        payload: id,
       });
     });
   };
@@ -45,6 +45,7 @@ export const editRecipe = (obj) => {
       .then((res) => {
         dispatch({
           type: EDIT_RECIPE,
+          payload: obj,
         });
       });
   };
