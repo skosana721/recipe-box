@@ -9,7 +9,7 @@ function RecipeList() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRecipe());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       {recipeList.map((recipe) => {
