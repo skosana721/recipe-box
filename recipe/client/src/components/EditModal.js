@@ -11,7 +11,7 @@ function EditModal() {
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader>Modal title</ModalHeader>
-        <ModalBody>Hello World</ModalBody>
+        <ModalBody></ModalBody>
         <ModalFooter>
           <Button color="primary">Do Something</Button>{" "}
           <Button color="secondary" onClick={toggle}>
