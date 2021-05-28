@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { editRecipe } from "../redux/actions/recipe";
-function EditModal({ ingredients, _id }) {
+function EditModal({ ingredients, id }) {
   const [modal, setModal] = useState(false);
   const [newIngredients, setNewIngredients] = useState(ingredients);
   const dispatch = useDispatch();
   const toggle = () => setModal(!modal);
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(editRecipe({ newIngredients, _id }));
+    dispatch(editRecipe({ newIngredients, id }));
     setModal(!modal);
   };
   return (
