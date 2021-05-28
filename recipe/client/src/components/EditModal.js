@@ -6,10 +6,10 @@ function EditModal() {
   const toggle = () => setModal(!modal);
   return (
     <div>
-      <Button color="danger">
+      <Button color="danger" onClick={toggle}>
         <h3>Edit</h3>
       </Button>
-      <Modal>
+      <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader>Modal title</ModalHeader>
         <ModalBody>Hello World</ModalBody>
         <ModalFooter>
