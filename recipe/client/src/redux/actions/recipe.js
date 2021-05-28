@@ -38,7 +38,6 @@ export const deleteRecipe = (id) => {
   };
 };
 export const editRecipe = (obj) => {
-  console.log(obj);
   const { id, newIngredients } = obj;
   return (dispatch) => {
     axios
