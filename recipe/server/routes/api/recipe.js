@@ -35,7 +35,7 @@ const recipeRoutes = (app) => {
       const updatedRecipe = await Recipe.updateOne(
         { _id: req.params.id },
         {
-          ingredients: req.body.ingredients,
+          ingredients: req.body.newIngredients,
         }
       );
       res.status(201).send(updatedRecipe);
