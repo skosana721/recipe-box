@@ -13,8 +13,12 @@ function EditModal({ ingredients }) {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader>Modal title</ModalHeader>
         <ModalBody>
-          <form action="">
-            <input type="text" />
+          <form>
+            <input
+              type="text"
+              onChange={(e) => setNewIngredients(e.target.value)}
+              value={newIngredients}
+            />
             <Button type="submit">Submit</Button>
           </form>
         </ModalBody>
