@@ -10,6 +10,7 @@ import {
   Button,
   Card,
 } from "reactstrap";
+import EditModal from "./EditModal";
 function Recipe({ recipe, _id, ingredients }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -26,6 +27,7 @@ function Recipe({ recipe, _id, ingredients }) {
           <Card>
             <CardBody>
               {ingredients} <Button>Edit</Button>
+              <EditModal />
             </CardBody>
           </Card>
         </Collapse>

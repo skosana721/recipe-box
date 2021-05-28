@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 function EditModal() {
+  const [modal, setModal] = useState(false);
   return (
     <div>
       <Button color="danger">
