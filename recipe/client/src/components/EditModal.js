@@ -21,11 +21,13 @@ function EditModal({ ingredients, id }) {
         <ModalHeader>Modal title</ModalHeader>
         <ModalBody>
           <form onSubmit={handleSubmit}>
-            <input
-              type="text"
+            <textarea
+              cols="44"
+              rows="4"
               onChange={(e) => setNewIngredients(e.target.value)}
               value={newIngredients}
-            />
+            ></textarea>
+
             <Button type="submit">Submit</Button>
           </form>
         </ModalBody>
