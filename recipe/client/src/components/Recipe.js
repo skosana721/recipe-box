@@ -26,7 +26,7 @@ function Recipe({ recipe, _id, ingredients }) {
         <Collapse isOpen={isOpen}>
           <Card>
             <CardBody>
-              {ingredients} <Button>Edit</Button>
+              {ingredients}
               <EditModal />
             </CardBody>
           </Card>
