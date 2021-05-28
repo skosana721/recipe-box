@@ -27,7 +27,7 @@ function Recipe({ recipe, _id, ingredients }) {
           <Card>
             <CardBody>
               {ingredients}
-              <EditModal ingredients={ingredients} />
+              <EditModal ingredients={ingredients} id={_id} />
             </CardBody>
           </Card>
         </Collapse>
