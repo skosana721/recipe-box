@@ -38,10 +38,10 @@ export const deleteRecipe = (id) => {
   };
 };
 export const editRecipe = (obj) => {
-  const { _id, ingredients } = obj;
+  const { id, ingredients } = obj;
   return (dispatch) => {
     axios
-      .put(`http://localhost:4000/api/recipe/${_id}`, { ingredients })
+      .put(`http://localhost:4000/api/recipe/${id}`, { ingredients })
       .then((res) => {
         dispatch({
           type: EDIT_RECIPE,
