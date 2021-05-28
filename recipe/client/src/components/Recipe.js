@@ -24,7 +24,9 @@ function Recipe({ recipe, _id, ingredients }) {
         </ListGroupItem>
         <Collapse isOpen={isOpen}>
           <Card>
-            <CardBody>{ingredients}</CardBody>
+            <CardBody>
+              {ingredients} <Button>Edit</Button>
+            </CardBody>
           </Card>
         </Collapse>
       </ListGroup>
