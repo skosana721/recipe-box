@@ -11,9 +11,13 @@ function EditModal() {
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader>Modal title</ModalHeader>
-        <ModalBody></ModalBody>
+        <ModalBody>
+          <form action="">
+            <input type="text" />
+            <Button type="submit">Submit</Button>
+          </form>
+        </ModalBody>
         <ModalFooter>
-          <Button color="primary">Do Something</Button>{" "}
           <Button color="secondary" onClick={toggle}>
             Cancel
           </Button>
