@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addRecipe } from "../redux/actions/recipe";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
 
 function RecipeForm() {
   const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ function RecipeForm() {
   };
 
   return (
-    <div>
+    <Container>
       <Form onSubmit={handleSubmit} className="recipe-form">
         <FormGroup>
           <Label for="recipe">Email</Label>
@@ -52,7 +52,7 @@ function RecipeForm() {
         </FormGroup>
         <Button>Add</Button>
       </Form>
-    </div>
+    </Container>
   );
 }
 
