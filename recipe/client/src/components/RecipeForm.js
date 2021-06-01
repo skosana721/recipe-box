@@ -50,7 +50,7 @@ function RecipeForm() {
             value={formData.ingredients}
           />
         </FormGroup>
-        <Button>Add</Button>
+        <Button color="primary">Add</Button>
       </Form>
     </Container>
   );
