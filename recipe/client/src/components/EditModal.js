@@ -14,7 +14,7 @@ function EditModal({ ingredients, id }) {
   };
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <Button color="primary" onClick={toggle}>
         <h3>Edit</h3>
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
