@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addRecipe } from "../redux/actions/recipe";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 function RecipeForm() {
   const [formData, setFormData] = useState({
@@ -26,25 +27,31 @@ function RecipeForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="recipe-form">
-        <input
-          type="text"
-          name="recipe"
-          onChange={handleChange}
-          placeholder="Enter recipe "
-          value={formData.recipe}
-        />
-        <textarea
-          name="ingredients"
-          id=""
-          onChange={handleChange}
-          cols="30"
-          rows="7"
-          placeholder="Enter ingredients"
-          value={formData.ingredients}
-        ></textarea>
-        <button type="submit">Add</button>
-      </form>
+      <Form onSubmit={handleSubmit} className="recipe-form">
+        <FormGroup>
+          <Label for="recipe">Email</Label>
+          <Input
+            type="text"
+            name="recipe"
+            onChange={handleChange}
+            id="recipe"
+            placeholder="Enter recipe "
+            value={formData.recipe}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="ingredients">Text Area</Label>
+          <Input
+            type="textarea"
+            name="ingredients"
+            id="ingredients"
+            onChange={handleChange}
+            placeholder="Enter ingredients"
+            value={formData.ingredients}
+          />
+        </FormGroup>
+        <Button>Add</Button>
+      </Form>
     </div>
   );
 }
