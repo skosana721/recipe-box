@@ -7,9 +7,13 @@ import RecipeList from "./components/RecipeList";
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <RecipeForm />
-      <RecipeList />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/" exact component={RecipeForm} />
+          <Route path="/recipeList" component={RecipeList} />
+        </Switch>
+      </Router>
     </div>
   );
 }
