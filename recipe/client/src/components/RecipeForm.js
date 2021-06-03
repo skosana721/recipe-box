@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addRecipe } from "../redux/actions/recipe";
 import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
+import { useHistory } from "react-router-dom";
 
 function RecipeForm() {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ function RecipeForm() {
     ingredients: "",
   });
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
