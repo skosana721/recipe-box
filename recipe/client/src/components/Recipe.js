@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import { deleteRecipe } from "../redux/actions/recipe";
 import { useDispatch } from "react-redux";
-
-import {
-  ListGroup,
-  ListGroupItem,
-  Collapse,
-  CardBody,
-  Button,
-  Card,
-} from "reactstrap";
+import { ListGroupItem, Collapse, CardBody, Button, Card } from "reactstrap";
 import EditModal from "./EditModal";
 function Recipe({ recipe, _id, ingredients }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,28 +9,25 @@ function Recipe({ recipe, _id, ingredients }) {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <ListGroup>
-        <ListGroupItem>
-          <span onClick={toggle}>{recipe}</span>
-          <Button
-            outline
-            color="danger"
-            onClick={() => dispatch(deleteRecipe(_id))}
-          >
-            Delete
-          </Button>
-        </ListGroupItem>
-        <Collapse isOpen={isOpen}>
-          <Card>
-            <CardBody>
-              {ingredients}
-              <EditModal ingredients={ingredients} id={_id} />
-            </CardBody>
-          </Card>
-        </Collapse>
-      </ListGroup>
-    </div>
+    <ListGroupItem className="recipe">
+      <span onClick={toggle}>{recipe}</span>
+      <Button
+        outline
+        color="danger"
+        className="delete_btn"
+        onClick={() => dispatch(deleteRecipe(_id))}
+      >
+        Delete
+      </Button>
+      <Collapse isOpen={isOpen}>
+        <Card>
+          <CardBody>
+            {ingredients}
+            <EditModal ingredients={ingredients} id={_id} />
+          </CardBody>
+        </Card>
+      </Collapse>
+    </ListGroupItem>
   );
 }
 
