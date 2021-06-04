@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addRecipe } from "../redux/actions/recipe";
-import { Button, Form, FormGroup, Label, Input, Container } from "reactstrap";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Container,
+  Alert,
+} from "reactstrap";
 import { useHistory } from "react-router-dom";
 
 function RecipeForm() {
@@ -9,25 +17,42 @@ function RecipeForm() {
     recipe: "",
     ingredients: "",
   });
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => setError(""), 5000);
+    }
+  }, [error]);
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (formData.recipe && formData.ingredients) {
+      setError("");
       dispatch(addRecipe(formData));
+      history.push("/recipeList");
       setFormData({
         recipe: "",
         ingredients: "",
       });
+    } else {
+      setError(`Can't submit form with an empty field`);
     }
   };
 
   return (
     <Container>
+      {error && (
+        <Alert color="danger" className="error_msg">
+          {error}
+        </Alert>
+      )}
+
       <Form onSubmit={handleSubmit} className="recipe-form">
         <FormGroup>
           <Label for="recipe">Email</Label>
