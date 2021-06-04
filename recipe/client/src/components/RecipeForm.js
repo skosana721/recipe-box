@@ -78,7 +78,7 @@ function RecipeForm() {
         </FormGroup>
         <Button color="primary">Add</Button>
       </Form>
-      <Link to="/recipeList">Check another recipes</Link>
+      <Link to="/recipeList">View recipes</Link>
     </Container>
   );
 }
