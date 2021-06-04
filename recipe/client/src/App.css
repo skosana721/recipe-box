@@ -16,3 +16,12 @@ textarea {
   font-weight: bold;
   text-transform: capitalize;
 }
+
+.recipe .delete_btn {
+  float: right;
+  text-align: center;
+  text-transform: uppercase;
+}
+.recipe .card {
+  margin-top: 1.5rem;
+}
