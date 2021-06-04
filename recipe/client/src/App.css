@@ -11,3 +11,8 @@
 textarea {
   margin: 1rem 0;
 }
+.error_msg {
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
