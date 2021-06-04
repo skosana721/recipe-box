@@ -15,9 +15,13 @@ function RecipeList() {
   return (
     <Container>
       <ListGroup>
-        {recipeList.map((recipe) => {
-          return <Recipe key={recipe._id} {...recipe} />;
-        })}
+        {recipeList.length > 0 ? (
+          recipeList.map((recipe) => {
+            return <Recipe key={recipe._id} {...recipe} />;
+          })
+        ) : (
+          <h2>Currently, the is no recipes available</h2>
+        )}
       </ListGroup>
       <Link to="/">Go to home</Link>
     </Container>
