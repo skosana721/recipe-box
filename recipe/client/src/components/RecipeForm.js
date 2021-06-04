@@ -10,7 +10,7 @@ import {
   Container,
   Alert,
 } from "reactstrap";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 function RecipeForm() {
   const [formData, setFormData] = useState({
@@ -78,6 +78,7 @@ function RecipeForm() {
         </FormGroup>
         <Button color="primary">Add</Button>
       </Form>
+      <Link to="/recipeList">Check another recipes</Link>
     </Container>
   );
 }
